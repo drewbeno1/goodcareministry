@@ -240,9 +240,10 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  background-color: var(--color-primary-dark);
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   color: #ffffff;
 }
 
@@ -522,7 +523,7 @@ p {
 
 .donate-options {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-bottom: 2rem;
 }
