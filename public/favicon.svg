@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .sketch {
+      fill: none;
+      stroke: #2d5a27;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .fill-light { fill: #f8f6f3; }
+    .fill-door { fill: #d4a853; }
+  </style>
+
+  <!-- House body - slightly wobbly lines -->
+  <path class="sketch fill-light" d="M13 33 L13 55 Q13 56 14 56 L50 56 Q51 56 51 55 L51 33"/>
+
+  <!-- Roof - hand drawn look -->
+  <path class="sketch" d="M6 34 Q18 22 32 10 Q46 22 58 34" stroke-width="2.5"/>
+  <path class="sketch" d="M11 33 L11 56 M53 33 L53 56"/>
+
+  <!-- Door - slightly imperfect rectangle -->
+  <path class="sketch fill-door" d="M25 56 L25 39 Q25 38 26 38 L38 38 Q39 38 39 39 L39 56"/>
+
+  <!-- Door knob -->
+  <circle cx="36" cy="48" r="2" class="sketch" fill="#2d5a27"/>
+
+  <!-- Left window - sketchy -->
+  <rect x="15" y="40" width="8" height="8" rx="1" class="sketch" fill="#fff"/>
+  <path class="sketch" d="M19 40 L19 48 M15 44 L23 44" stroke-width="1.5"/>
+
+  <!-- Right window - sketchy -->
+  <rect x="41" y="40" width="8" height="8" rx="1" class="sketch" fill="#fff"/>
+  <path class="sketch" d="M45 40 L45 48 M41 44 L49 44" stroke-width="1.5"/>
+
+  <!-- Heart sketched -->
+  <path d="M32 44 Q30 42 28 43 Q26 44 26 46 Q26 48 32 52 Q38 48 38 46 Q38 44 36 43 Q34 42 32 44"
+        fill="none" stroke="#2d5a27" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Extra sketch lines for hand-drawn feel -->
+  <path class="sketch" d="M8 35 L11 33" stroke-width="1.5"/>
+  <path class="sketch" d="M56 35 L53 33" stroke-width="1.5"/>
+</svg>
