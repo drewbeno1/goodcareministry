@@ -97,19 +97,20 @@ if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // Get form data
     const formData = new FormData(this);
-    const data = Object.fromEntries(formData);
 
-    // Here you would typically send the data to a server
-    // For now, we'll just log it and show a success message
-    console.log('Form submitted:', data);
-
-    // Show success message (you can customize this)
-    alert('Thank you for your message! We will get back to you soon.');
-
-    // Reset form
-    this.reset();
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => {
+        alert('Thank you for your message! We will get back to you soon.');
+        this.reset();
+      })
+      .catch(() => {
+        alert('Something went wrong. Please try again.');
+      });
   });
 }
 
