@@ -19,10 +19,51 @@ if (navToggle && navLinks) {
   });
 }
 
+// Donate Modal
+const donateModal = document.getElementById('donate-modal');
+
+function openDonateModal() {
+  donateModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDonateModal() {
+  donateModal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+if (donateModal) {
+  donateModal.querySelector('.modal-close').addEventListener('click', closeDonateModal);
+  donateModal.addEventListener('click', (e) => {
+    if (e.target === donateModal) closeDonateModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && donateModal.classList.contains('active')) closeDonateModal();
+  });
+
+  document.getElementById('donate-contact-btn').addEventListener('click', (e) => {
+    e.preventDefault();
+    closeDonateModal();
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      const navHeight = document.querySelector('.navbar')?.offsetHeight || 0;
+      window.scrollTo({
+        top: contactSection.getBoundingClientRect().top + window.pageYOffset - navHeight,
+        behavior: 'smooth'
+      });
+    }
+  });
+}
+
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
+    // Intercept donate links to show popup instead
+    if (this.getAttribute('href') === '#donate') {
+      if (donateModal) openDonateModal();
+      return;
+    }
     const target = document.querySelector(this.getAttribute('href'));
     if (target) {
       const navHeight = document.querySelector('.navbar')?.offsetHeight || 0;
@@ -106,6 +147,48 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// Director's Testimony Modal
+const testimonyBtn = document.getElementById('testimony-btn');
+const testimonyModal = document.getElementById('testimony-modal');
+const modalClose = document.getElementById('modal-close');
+
+if (testimonyBtn && testimonyModal) {
+  testimonyBtn.addEventListener('click', () => {
+    testimonyModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+
+  const closeModal = () => {
+    testimonyModal.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  modalClose.addEventListener('click', closeModal);
+
+  testimonyModal.addEventListener('click', (e) => {
+    if (e.target === testimonyModal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && testimonyModal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+}
+
+// Gallery Expand/Collapse
+const galleryToggle = document.getElementById('gallery-toggle');
+const galleryGrid = document.querySelector('.gallery-grid');
+
+if (galleryToggle && galleryGrid) {
+  galleryToggle.addEventListener('click', () => {
+    const isExpanded = galleryGrid.classList.toggle('expanded');
+    galleryToggle.textContent = isExpanded ? 'Show Less' : 'Show More';
+  });
+}
+
 // Stat counter animation
 const statNumbers = document.querySelectorAll('.stat-number');
 const statsSection = document.querySelector('.impact');
@@ -117,11 +200,9 @@ if (statsSection && statNumbers.length > 0) {
         statNumbers.forEach(stat => {
           const text = stat.textContent;
           // Check if it's a placeholder
-          if (!text.includes('[')) {
-            const target = parseInt(text.replace(/\D/g, ''));
-            if (!isNaN(target)) {
-              animateCounter(stat, target);
-            }
+          if (!text.includes('[') && /^\d+$/.test(text.trim())) {
+            const target = parseInt(text);
+            animateCounter(stat, target);
           }
         });
         statsObserver.unobserve(entry.target);

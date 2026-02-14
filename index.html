@@ -26,8 +26,8 @@
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#mission">Our Mission</a></li>
-          <li><a href="#programs">Programs</a></li>
           <li><a href="#impact">Impact</a></li>
+          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="#donate" class="btn btn-primary" style="color: white">Donate</a></li>
         </ul>
@@ -35,7 +35,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero" id="home" style="background-image: url('/images/full-group.png');">
+    <header class="hero" id="home" style="background-image: url('/images/full-group.jpg');">
       <div class="hero-overlay"></div>
       <div class="container hero-content">
         <h1>Nurturing Children Spiritually, Socially, and Emotionally</h1>
@@ -56,7 +56,7 @@
         </div>
         <div class="about-content">
           <div class="about-image">
-            <img src="/images/kidsclass.png" alt="Good Care Children's Ministry team in Uganda">
+            <img src="/images/kidsclass.jpg" alt="Good Care Children's Ministry team in Uganda">
           </div>
           <div class="about-text">
             <p class="lead">Our sole purpose is to support orphans, vulnerable children at risk, and aid widowed or single mothers struggling to provide essential care.</p>
@@ -143,9 +143,67 @@
           <blockquote>
             <p>"We exist to be the catalyst of change in the lives of children in targeted communities to achieve an enduring quality of life" - Pastor Timothy Sserugga</p>
           </blockquote>
+          <button class="btn btn-testimony" id="testimony-btn">Read Director's Testimony</button>
         </div>
       </div>
     </section>
+
+    <!-- Director's Testimony Modal -->
+    <div class="modal-overlay" id="testimony-modal">
+      <div class="modal">
+        <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+        <h2>Director's Testimony</h2>
+        <h3>Pastor Timothy Sserugga</h3>
+        <div class="modal-body">
+          <p>My name is Pastor Timothy Sserugga and l grew up in the Village of Kiryokya. I was raised in a
+polygamous family with a very abusive father who only cared about the money he got each time he got
+married. He had six wives in one house which made life very hard for us.
+I attended Kiryokya Primary School, then Bukomero Secondary School.  I struggled with school because I
+had to ride a bicycle ten miles to get to school. I had to leave school to help with the family garden at
+home. </p>
+          <p>Guerilla warfare dispersed many people in Uganda, the young woman that would become my wife came
+into our village because of the great strife in our country. During that same time, the aids disease was
+spreading in our country, so many people lost both parents and a had need for comfort and care. This
+caused there to be many orphans in our village. </p>
+          <p>I met a young woman named Catherine who became my wife. She was taking care of some children
+who had lost their parents and she would get some financial aid from my mother.
+Catherine was born again and she is the one who introduced me to Jesus and l fell in love with both her
+and Jesus. l started helping her out along with my mother and in 2012 l decided to legalize this work of
+looking after these children because of all that we were doing for the children.
+My wife and I make a wonderful team and each of us complement the other, we both have our
+shortcomings, but together we make up for them and then some. </p>
+          <p>For our love of Jesus and the children, we go around preaching and winning souls in our own area.  This
+led to us starting a home fellowship and where we could worship our Lord and share the bible.
+In 2014 l joined Link International to study for a Congregation Certificate, but out of love for Our Lord
+Jesus and our call to spread the Good News, l had already started ministry work before getting the
+certificate. </p>
+          <p>We were given the opportunity to buy a cornfield; it is in some of the media on this website. The children
+have to eat and sometimes it is hard to feed them, we struggle with so many children. We work the
+cornfields and wait for them for harvest time, this is much cheaper than buying corn flour, it can help us
+for three months without interruption. </p>
+          <p>In our ministry, we go to places and we give hope to the hopeless, especially children. We can provide the
+children with a safe home and a Christian education.
+The work is a bit much for us, but we praise and thank God that He is faithful and never lets down His
+creation at any one time. </p>
+          <p>We also thank the Holy Spirit who has led you so well to stand in the gap. God richly bless you.
+Thank You for Caring and Supporting The Needs of the Children. </p>
+          <p>God Richly Bless You</p>
+          <p>Pastor Timothy &amp; Catherine Sserugga</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Donate Popup Modal -->
+    <div class="modal-overlay" id="donate-modal">
+      <div class="modal modal-sm">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <h2>Donate</h2>
+        <div class="modal-body">
+          <p>Support for Credit/Debit donations are coming soon. In the meantime please reach out and let's get partnered together!</p>
+          <a href="#contact" class="btn btn-primary" id="donate-contact-btn">Contact Us</a>
+        </div>
+      </div>
+    </div>
 
     <!-- Gallery Section -->
     <section class="section gallery" id="gallery">
@@ -155,23 +213,81 @@
         </div>
         <div class="gallery-grid">
           <div class="gallery-item">
-            <img src="/images/girl1.png" alt="Child at Good Care Ministry">
+            <img src="/images/girl1.jpg" alt="Child at Good Care Ministry">
           </div>
           <div class="gallery-item">
-            <img src="/images/kids1.png" alt="Children playing">
+            <img src="/images/kids1.jpg" alt="Children playing">
           </div>
           <div class="gallery-item">
-            <img src="/images/girl2.png" alt="Child smiling">
+            <img src="/images/girl2.jpg" alt="Child smiling">
           </div>
           <div class="gallery-item">
-            <img src="/images/IMG_2940.png" alt="Children in class">
+            <img src="/images/IMG_2940.jpg" alt="Children in class">
           </div>
           <div class="gallery-item">
-            <img src="/images/teacher.png" alt="Teacher">
+            <img src="/images/teacher.jpg" alt="Teacher">
           </div>
           <div class="gallery-item">
-            <img src="/images/manclass.png" alt="Teaching session">
+            <img src="/images/manclass.jpg" alt="Teaching session">
           </div>
+          <!-- Hidden gallery items -->
+          <div class="gallery-item gallery-extra">
+            <img src="/images/1.jpg" alt="Children at Good Care Ministry">
+          </div>
+          <div class="gallery-item gallery-extra">
+            <img src="/images/2.jpg" alt="Children together">
+          </div>
+          <div class="gallery-item gallery-extra">
+            <img src="/images/3.jpg" alt="Classroom">
+          </div>
+          <div class="gallery-item gallery-extra">
+            <img src="/images/4.jpg" alt="Ministry corridor">
+          </div>
+          <div class="gallery-item gallery-extra">
+            <img src="/images/5.jpg" alt="Girl with water">
+          </div>
+          <div class="gallery-item gallery-extra">
+            <img src="/images/6.jpg" alt="Music session">
+          </div>
+          <div class="gallery-item gallery-extra">
+            <img src="/images/7.jpg" alt="Group photo">
+          </div>
+          <div class="gallery-item gallery-extra">
+            <img src="/images/8.jpg" alt="Full group photo">
+          </div>
+          <div class="gallery-item gallery-extra">
+            <img src="/images/9.jpg" alt="Kids in class">
+          </div>
+          <div class="gallery-item gallery-extra">
+            <img src="/images/10.jpg" alt="Child smiling">
+          </div>
+          <div class="gallery-item gallery-extra">
+            <img src="/images/11.jpg" alt="Children playing together">
+          </div>
+          <div class="gallery-item gallery-extra">
+            <img src="/images/12.jpg" alt="Child portrait">
+          </div>
+          <div class="gallery-item gallery-extra">
+            <img src="/images/13.jpg" alt="Ministry activities">
+          </div>
+          <div class="gallery-item gallery-extra">
+            <img src="/images/14.jpg" alt="Teacher with students">
+          </div>
+          <div class="gallery-item gallery-extra">
+            <img src="/images/15.jpg" alt="Classroom teaching">
+          </div>
+          <div class="gallery-item gallery-extra">
+            <img src="/images/16.jpg" alt="Children at the ministry">
+          </div>
+          <div class="gallery-item gallery-extra">
+            <img src="/images/17.jpg" alt="Music activities">
+          </div>
+          <div class="gallery-item gallery-extra">
+            <img src="/images/18.jpg" alt="Ministry grounds">
+          </div>
+        </div>
+        <div class="gallery-actions">
+          <button class="btn btn-primary btn-lg" id="gallery-toggle">Show More</button>
         </div>
       </div>
     </section>
